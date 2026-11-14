@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://du3g4b7silm3s"]
 
 [ext_resource type="Texture2D" uid="uid://b0ib63yjd8plu" path="res://assets/character-actions.png" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bxv5rsv3uqmgl" path="res://scripts/player.gd" id="1_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://moasuuh6fj2e" path="res://assets/character.png" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
@@ -311,6 +312,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1697796763]
+script = ExtResource("1_qhqgy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1334483408]
 scale = Vector2(2, 2)
