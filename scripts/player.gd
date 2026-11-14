@@ -4,13 +4,24 @@ extends CharacterBody2D
 const SPEED = 150.0
 
 var last_direction: Vector2 = Vector2.RIGHT
+var is_attacking: bool = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	
+	if Input.is_action_just_pressed('attack'):
+		attack()
+	
 	process_movement()
+	process_animation()
 	move_and_slide()
 
+
+
+# --------------------------------------------------
+# MOVEMENT AND ANIMATION
+# --------------------------------------------------
 
 func process_movement() -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -22,17 +33,15 @@ func process_movement() -> void:
 		last_direction = direction
 	else:
 		velocity = Vector2.ZERO
-	
-	velocity = direction * SPEED
-	
-	process_animation(direction)
 
 
-func process_animation(direction) -> void:
+func process_animation() -> void:
+	if is_attacking:
+		return
 	if velocity != Vector2.ZERO:
-		play_animation("walk", direction)
+		play_animation("walk", last_direction)
 	else:
-		play_animation("idle", direction)
+		play_animation("idle", last_direction)
 
 
 func play_animation(prefix: String, dir: Vector2) -> void:
@@ -44,3 +53,18 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		animated_sprite_2d.play(prefix + "_up")
 	elif dir.y > 0:
 		animated_sprite_2d.play(prefix + "_down")
+
+
+
+# --------------------------------------------------
+# ATTACKING
+# --------------------------------------------------
+
+func attack() -> void:
+	is_attacking = true
+	play_animation('can', last_direction)
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if is_attacking:
+		is_attacking = false

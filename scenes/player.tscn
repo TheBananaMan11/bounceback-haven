@@ -173,9 +173,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"axe_down ",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,9 +184,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjrip")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"axe_left",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -195,9 +195,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ur7pv")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"axe_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -206,9 +206,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2wvv")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"axe_up",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -217,9 +217,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jc3p3")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"can_down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -228,9 +228,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t4otl")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"can_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -239,9 +239,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cs1tg")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"can_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -250,9 +250,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_giy8y")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"can_up",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,9 +261,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jej6c")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hoe_down",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -272,9 +272,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oprun")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hoe_left",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -283,9 +283,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qfm1y")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hoe_right",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -294,7 +294,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4r5pv")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"hoe_up",
 "speed": 5.0
 }, {
@@ -393,4 +393,6 @@ script = ExtResource("1_qhqgy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1334483408]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_w2h7m")
-animation = &"can_up"
+animation = &"hoe_up"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
