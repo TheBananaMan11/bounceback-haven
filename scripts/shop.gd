@@ -24,11 +24,11 @@ var tween: Tween
 @onready var next_wave_button: Button = %NextWaveButton
 @onready var close_button: Button = %CloseButton
 
-
 func _ready() -> void:
 	Game.money_changed.connect(update_shop)
 	Game.loadout_changed.connect(update_shop)
 	panel_container.resized.connect(update_pivot)
+	MusicManager.play_music(preload("res://assets/music/shop.ogg"))
 	hide()
 
 

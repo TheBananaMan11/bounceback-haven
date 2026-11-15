@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="bounceback-haven"
-run/main_scene="uid://bav8eu81r4s10"
+run/main_scene="uid://vc4wr1os5sfc"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,13 +19,14 @@ config/icon="res://icon.svg"
 
 Game="*res://scripts/game.gd"
 Sfx="*res://scripts/sfx.gd"
+MusicManager="*uid://cqjbvb4kjiq8e"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=2560
+window/size/window_height_override=1440
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"

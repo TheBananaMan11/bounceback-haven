@@ -1,12 +1,21 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://casf31kdvqknd"]
 
-[ext_resource type="Script" path="res://scripts/hud.gd" id="1_bo48s"]
-[ext_resource type="Script" path="res://scripts/hearts.gd" id="2_8qguk"]
-[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="3_136eg"]
+[ext_resource type="Script" uid="uid://cx62xmgk8s5p6" path="res://scripts/hud.gd" id="1_bo48s"]
+[ext_resource type="Script" uid="uid://d3jq6ktqvgbfc" path="res://scripts/hearts.gd" id="2_8qguk"]
+[ext_resource type="FontFile" uid="uid://b7smo382gs38x" path="res://assets/fonts/Minecraft.ttf" id="2_136eg"]
+[ext_resource type="Texture2D" uid="uid://lxncdhj2movk" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="3_136eg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3evi"]
+font = ExtResource("2_136eg")
+font_size = 24
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj5la"]
 atlas = ExtResource("3_136eg")
 region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qhqgy"]
+font = ExtResource("2_136eg")
+font_size = 128
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gss2c"]
 content_margin_left = 24.0
@@ -19,6 +28,14 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.7882353, 0.63529414, 0.41960785, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_gcuc0"]
+font = ExtResource("2_136eg")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0as0"]
+font = ExtResource("2_136eg")
+font_size = 32
 
 [node name="HUD" type="CanvasLayer" unique_id=994156376]
 process_mode = 3
@@ -39,10 +56,11 @@ theme_override_constants/separation = 8
 [node name="InfoLabel" type="Label" parent="TopLeft/VBoxContainer" unique_id=1448677968]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
 text = "Wave 0/5    $0    Watering Can    Enemies: 0"
+label_settings = SubResource("LabelSettings_c3evi")
 
 [node name="Lives" type="HBoxContainer" parent="TopLeft/VBoxContainer" unique_id=1778631690]
 layout_mode = 2
@@ -69,10 +87,11 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_top = 110.0
 offset_bottom = 210.0
-theme_override_font_sizes/font_size = 72
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 72
 text = "Wave 1"
+label_settings = SubResource("LabelSettings_qhqgy")
 horizontal_alignment = 1
 
 [node name="GameOverPanel" type="CenterContainer" parent="." unique_id=816580904]
@@ -80,6 +99,8 @@ unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="GameOverPanel" unique_id=475497356]
 layout_mode = 2
@@ -92,25 +113,28 @@ theme_override_constants/separation = 12
 [node name="ResultLabel" type="Label" parent="GameOverPanel/PanelContainer/VBoxContainer" unique_id=165919707]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 48
 text = "GAME OVER"
+label_settings = SubResource("LabelSettings_gcuc0")
 horizontal_alignment = 1
 
 [node name="MessageLabel" type="Label" parent="GameOverPanel/PanelContainer/VBoxContainer" unique_id=364878490]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 24
 text = "Your house was destroyed!"
+label_settings = SubResource("LabelSettings_r0as0")
 horizontal_alignment = 1
 
 [node name="PlayAgainButton" type="Button" parent="GameOverPanel/PanelContainer/VBoxContainer" unique_id=190219600]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(320, 48)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_136eg")
 theme_override_font_sizes/font_size = 24
 text = "Play again"
 

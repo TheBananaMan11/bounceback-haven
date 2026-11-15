@@ -14,10 +14,12 @@ extends Node2D
 @onready var shop_stall: Node2D = $ShopStall
 
 
+
 func _ready() -> void:
 	Game.grass_tilemap = grass_tilemap
 	Game.player = player
 	Game.house = house
+	MusicManager.play_music(preload("res://assets/music/idle.ogg"))
 	Game.reset()
 
 	# Opening "get ready" screen: the stall is up and the shop panel is open.
