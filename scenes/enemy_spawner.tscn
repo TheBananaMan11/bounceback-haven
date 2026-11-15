@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy_spawner.gd" id="1_ih16b"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/chicken.tscn" id="2_31irv"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/cow.tscn" id="3_txvhj"]
+[ext_resource type="PackedScene" path="res://scenes/boat.tscn" id="4_sukom"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=94069879]
+script = ExtResource("1_ih16b")
+chicken_scene = ExtResource("2_31irv")
+cow_scene = ExtResource("3_txvhj")
+boat_scene = ExtResource("4_sukom")
+
+[node name="Boats" type="Node2D" parent="." unique_id=2079266266]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=630475645]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=36774677]
+wait_time = 0.8
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

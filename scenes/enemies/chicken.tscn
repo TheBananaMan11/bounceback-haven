@@ -1,0 +1,76 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_2tdpy"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Chicken Sprites.png" id="2_edse0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omgdj"]
+atlas = ExtResource("2_edse0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alicx"]
+atlas = ExtResource("2_edse0")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rafm"]
+atlas = ExtResource("2_edse0")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5da8"]
+atlas = ExtResource("2_edse0")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvt2w"]
+atlas = ExtResource("2_edse0")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t32oy"]
+atlas = ExtResource("2_edse0")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hw348"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omgdj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alicx")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rafm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5da8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvt2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t32oy")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4rjm"]
+radius = 22.0
+
+[node name="Chicken" type="CharacterBody2D" unique_id=362760351 groups=["enemies"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_2tdpy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=156430371]
+position = Vector2(0, -8)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hw348")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=591329512]
+shape = SubResource("CircleShape2D_u4rjm")

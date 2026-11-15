@@ -1,0 +1,144 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/shop.gd" id="1_2i61c"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="2_85p0y"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="3_kdvrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_atewb"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.23137255, 0.16470589, 0.14509805, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.7882353, 0.63529414, 0.41960785, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk32u"]
+atlas = ExtResource("2_85p0y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quulj"]
+atlas = ExtResource("2_85p0y")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk8hd"]
+atlas = ExtResource("2_85p0y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nbll"]
+atlas = ExtResource("3_kdvrj")
+region = Rect2(32, 48, 16, 16)
+
+[node name="Shop" type="CanvasLayer" unique_id=943229790]
+layer = 2
+script = ExtResource("1_2i61c")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1977619769]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1642285587]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_atewb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer" unique_id=1449746323]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=528282176]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Get ready!"
+horizontal_alignment = 1
+
+[node name="TallyLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=1035549784]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Drowned: 0    Earned: $0"
+horizontal_alignment = 1
+
+[node name="MoneyLabel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=275633470]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Money: $0    House lives: 3/3"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=76404123]
+layout_mode = 2
+
+[node name="WateringCanButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=2011108599]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Watering Can"
+icon = SubResource("AtlasTexture_mk32u")
+alignment = 0
+expand_icon = true
+
+[node name="HoeButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=959274475]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Buy Hoe - $60"
+icon = SubResource("AtlasTexture_quulj")
+alignment = 0
+expand_icon = true
+
+[node name="AxeButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=489616739]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Buy Axe - $120"
+icon = SubResource("AtlasTexture_xk8hd")
+alignment = 0
+expand_icon = true
+
+[node name="FenceButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=117280232]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Buy Fence - $30"
+icon = SubResource("AtlasTexture_2nbll")
+alignment = 0
+expand_icon = true
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=167945068]
+layout_mode = 2
+
+[node name="NextWaveButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=208095181]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Start wave 1"
+
+[node name="CloseButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer" unique_id=47691731]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(460, 44)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Back to the farm (E)"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/WateringCanButton" to="." method="_on_watering_can_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HoeButton" to="." method="_on_hoe_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/AxeButton" to="." method="_on_axe_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/FenceButton" to="." method="_on_fence_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/NextWaveButton" to="." method="_on_next_wave_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,84 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/shop_stall.gd" id="1_74cl0"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="2_sftq6"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_tools_and_meterials.png" id="3_p50hc"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Simple_Milk_and_grass_item.png" id="4_6jk2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chtwf"]
+atlas = ExtResource("2_sftq6")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rbxt"]
+atlas = ExtResource("2_sftq6")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_071ad"]
+atlas = ExtResource("3_p50hc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_biqr2"]
+atlas = ExtResource("3_p50hc")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkn0y"]
+atlas = ExtResource("3_p50hc")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7mgp"]
+atlas = ExtResource("4_6jk2w")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3h5jp"]
+size = Vector2(128, 48)
+
+[node name="ShopStall" type="Node2D" unique_id=2139088793]
+script = ExtResource("1_74cl0")
+
+[node name="TableLeft" type="Sprite2D" parent="." unique_id=51977748]
+position = Vector2(-32, 0)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_chtwf")
+
+[node name="TableRight" type="Sprite2D" parent="." unique_id=632931050]
+position = Vector2(32, 0)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_2rbxt")
+
+[node name="WateringCan" type="Sprite2D" parent="." unique_id=757327194]
+position = Vector2(-48, -10)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_071ad")
+
+[node name="Hoe" type="Sprite2D" parent="." unique_id=74560324]
+position = Vector2(-8, -12)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_biqr2")
+
+[node name="Axe" type="Sprite2D" parent="." unique_id=1358308587]
+position = Vector2(32, -12)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_wkn0y")
+
+[node name="MilkJar" type="Sprite2D" parent="." unique_id=2029081859]
+position = Vector2(72, -8)
+scale = Vector2(3, 3)
+texture = SubResource("AtlasTexture_d7mgp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1419707268]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2072765090]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_3h5jp")
+
+[node name="PromptLabel" type="Label" parent="." unique_id=121103190]
+visible = false
+offset_left = -110.0
+offset_top = -110.0
+offset_right = 110.0
+offset_bottom = -70.0
+theme_override_font_sizes/font_size = 28
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+text = "Press E to shop"
+horizontal_alignment = 1

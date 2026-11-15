@@ -1,0 +1,159 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/house.gd" id="1_rk7hg"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="2_se78b"]
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="3_3bgk5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f74lx"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptc3g"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcu0q"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwc8c"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhx8p"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65la3"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcuhb"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7685u"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3853c"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhgw4"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ewhn"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fn05"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82h1m"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5ov4"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ep1bp"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57tf3"]
+atlas = ExtResource("3_3bgk5")
+region = Rect2(48, 32, 16, 16)
+
+[node name="House" type="Node2D" unique_id=815971090]
+script = ExtResource("1_rk7hg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=527914501]
+position = Vector2(0, -32)
+scale = Vector2(4, 4)
+texture = ExtResource("2_se78b")
+
+[node name="Fence" type="Node2D" parent="." unique_id=1318447457]
+
+[node name="Fence_0_0" type="Sprite2D" parent="Fence" unique_id=1443288059]
+position = Vector2(-128, -144)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_f74lx")
+
+[node name="Fence_1_0" type="Sprite2D" parent="Fence" unique_id=1415643557]
+position = Vector2(-64, -144)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_ptc3g")
+
+[node name="Fence_2_0" type="Sprite2D" parent="Fence" unique_id=184920690]
+position = Vector2(0, -144)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_wcu0q")
+
+[node name="Fence_3_0" type="Sprite2D" parent="Fence" unique_id=1779794227]
+position = Vector2(64, -144)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_bwc8c")
+
+[node name="Fence_4_0" type="Sprite2D" parent="Fence" unique_id=635337409]
+position = Vector2(128, -144)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_mhx8p")
+
+[node name="Fence_0_1" type="Sprite2D" parent="Fence" unique_id=348216694]
+position = Vector2(-128, -80)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_65la3")
+
+[node name="Fence_4_1" type="Sprite2D" parent="Fence" unique_id=682687161]
+position = Vector2(128, -80)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_qcuhb")
+
+[node name="Fence_0_2" type="Sprite2D" parent="Fence" unique_id=1806232460]
+position = Vector2(-128, -16)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_7685u")
+
+[node name="Fence_4_2" type="Sprite2D" parent="Fence" unique_id=1368443607]
+position = Vector2(128, -16)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_3853c")
+
+[node name="Fence_0_3" type="Sprite2D" parent="Fence" unique_id=144011240]
+position = Vector2(-128, 48)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_bhgw4")
+
+[node name="Fence_4_3" type="Sprite2D" parent="Fence" unique_id=1036537008]
+position = Vector2(128, 48)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_3ewhn")
+
+[node name="Fence_0_4" type="Sprite2D" parent="Fence" unique_id=663954328]
+position = Vector2(-128, 112)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_0fn05")
+
+[node name="Fence_1_4" type="Sprite2D" parent="Fence" unique_id=1956509045]
+position = Vector2(-64, 112)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_82h1m")
+
+[node name="Fence_2_4" type="Sprite2D" parent="Fence" unique_id=1413210707]
+position = Vector2(0, 112)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_e5ov4")
+
+[node name="Fence_3_4" type="Sprite2D" parent="Fence" unique_id=2065773583]
+position = Vector2(64, 112)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_ep1bp")
+
+[node name="Fence_4_4" type="Sprite2D" parent="Fence" unique_id=855346394]
+position = Vector2(128, 112)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_57tf3")

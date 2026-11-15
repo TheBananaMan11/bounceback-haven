@@ -1,0 +1,11 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Wood_Bridge.png" id="1_0063d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyrje"]
+atlas = ExtResource("1_0063d")
+region = Rect2(0, 0, 32, 48)
+
+[node name="Boat" type="Sprite2D" unique_id=1474214448]
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_qyrje")
