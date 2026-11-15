@@ -396,5 +396,9 @@ sprite_frames = SubResource("SpriteFrames_w2h7m")
 animation = &"hoe_up"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=802137637]
+limit_left = -1000
+limit_top = -1000
+limit_right = 2000
+limit_bottom = 2000
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
